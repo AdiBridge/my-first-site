@@ -448,16 +448,25 @@
     </ul>
 
     <!--
-        Contact form: validation only. Email delivery is NOT connected yet.
-        The form stays hidden until script.js runs, and script.js always
-        prevents submission, so no data is sent and the page never reloads.
+        Contact form, delivered by Formspree (public endpoint, no secrets).
+        With JavaScript: script.js validates the fields and sends them with fetch(),
+        so the page never reloads. Without JavaScript: the browser validates the
+        required fields and posts the form to Formspree directly.
     -->
-    <form id="contact-form" class="contact-form" aria-labelledby="contact-form-title"
-          aria-describedby="contact-form-note" novalidate hidden>
+    <form id="contact-form" class="contact-form"
+          action="https://formspree.io/f/maeezgnv" method="POST"
+          aria-labelledby="contact-form-title" aria-describedby="contact-form-note">
         <h3 id="contact-form-title" class="contact-form-title">השאירו הודעה</h3>
         <p id="contact-form-note" class="contact-form-note">
-            כל השדות הם שדות חובה. שליחת הודעות דרך הטופס עדיין אינה פעילה.
+            כל השדות הם שדות חובה.
         </p>
+
+        <!-- Formspree options: email subject, and a honeypot field that bots fill in -->
+        <input type="hidden" name="_subject" value="הודעה חדשה מאתר הפורטפוליו">
+        <div class="form-honeypot" aria-hidden="true">
+            <label for="cf-gotcha">אין למלא שדה זה</label>
+            <input type="text" id="cf-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
 
         <div class="form-row">
             <div class="form-field">
@@ -486,10 +495,13 @@
         </div>
 
         <div class="form-actions">
-            <button type="submit" class="contact-btn contact-btn-primary">בדיקת תקינות הטופס</button>
+            <button type="submit" id="contact-form-submit" class="contact-btn contact-btn-primary">שליחת הודעה</button>
         </div>
 
+        <!-- Loading and success messages (polite) -->
         <p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
+        <!-- Validation and delivery errors (assertive) -->
+        <p id="contact-form-alert" class="form-status is-error" role="alert"></p>
     </form>
 </section>
 

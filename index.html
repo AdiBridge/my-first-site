@@ -446,6 +446,51 @@
             </a>
         </li>
     </ul>
+
+    <!--
+        Contact form: validation only. Email delivery is NOT connected yet.
+        The form stays hidden until script.js runs, and script.js always
+        prevents submission, so no data is sent and the page never reloads.
+    -->
+    <form id="contact-form" class="contact-form" aria-labelledby="contact-form-title"
+          aria-describedby="contact-form-note" novalidate hidden>
+        <h3 id="contact-form-title" class="contact-form-title">השאירו הודעה</h3>
+        <p id="contact-form-note" class="contact-form-note">
+            כל השדות הם שדות חובה. שליחת הודעות דרך הטופס עדיין אינה פעילה.
+        </p>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label for="cf-name">שם מלא</label>
+                <input type="text" id="cf-name" name="name"
+                       autocomplete="name" required
+                       aria-describedby="cf-name-error">
+                <p id="cf-name-error" class="field-error"></p>
+            </div>
+
+            <div class="form-field">
+                <label for="cf-email">כתובת אימייל</label>
+                <input type="email" id="cf-email" name="email" dir="ltr"
+                       autocomplete="email" inputmode="email" spellcheck="false"
+                       placeholder="name@example.com" required
+                       aria-describedby="cf-email-error">
+                <p id="cf-email-error" class="field-error"></p>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="cf-message">הודעה</label>
+            <textarea id="cf-message" name="message" rows="5" required
+                      aria-describedby="cf-message-error"></textarea>
+            <p id="cf-message-error" class="field-error"></p>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="contact-btn contact-btn-primary">בדיקת תקינות הטופס</button>
+        </div>
+
+        <p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
 </section>
 
 <footer class="site-footer">

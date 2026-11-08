@@ -1482,3 +1482,162 @@ body > p::before {
 :root[data-theme="light"] .process-diagram {
     filter: drop-shadow(0 12px 28px rgba(15, 40, 80, 0.12));
 }
+
+/* =========================================================
+   Contact form (validation only — no delivery yet)
+   ========================================================= */
+:root {
+    --field-bg: rgba(6, 14, 28, 0.55);
+    --field-border: rgba(var(--line-rgb), 0.55);  /* ~3:1 against the panel */
+    --danger: #ff8f8f;                             /* ~7:1 on the dark panel */
+    --danger-rgb: 255, 143, 143;
+}
+
+:root[data-theme="light"] {
+    --field-bg: #ffffff;
+    --field-border: #7d8ea8;                       /* ~3.2:1 on white */
+    --danger: #c62828;                             /* ~5.6:1 on white */
+    --danger-rgb: 198, 40, 40;
+}
+
+.contact-form[hidden] {
+    display: none;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding-top: 32px;
+    text-align: right;
+    border-top: 1px solid var(--surface-border);
+}
+
+.contact-form-title {
+    margin: 0 0 6px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text);
+}
+
+.contact-form-note {
+    margin: 0 0 22px;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-field label {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 1rem; /* 16px: prevents zoom-on-focus in mobile Safari */
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--field-bg);
+    border: 1px solid var(--field-border);
+    border-radius: 12px;
+    outline: 2px solid transparent; /* visible in forced-colors mode */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible,
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.25);
+}
+
+.form-field [aria-invalid="true"] {
+    border-color: var(--danger);
+}
+
+.form-field [aria-invalid="true"]:focus {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 3px rgba(var(--danger-rgb), 0.25);
+}
+
+.field-error {
+    margin: 6px 0 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--danger);
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.form-actions {
+    margin-top: 6px;
+}
+
+.contact-form .contact-btn {
+    cursor: pointer;
+}
+
+.form-status {
+    margin: 18px 0 0;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text);
+    border-inline-start: 3px solid var(--accent);
+    border-start-end-radius: 12px;
+    border-end-end-radius: 12px;
+    background: rgba(var(--accent-rgb), 0.08);
+}
+
+.form-status:empty {
+    display: none;
+}
+
+.form-status.is-error {
+    border-inline-start-color: var(--danger);
+    background: rgba(var(--danger-rgb), 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-field input,
+    .form-field textarea {
+        transition: none;
+    }
+}
+
+/* Name and email side by side on wider screens */
+@media (min-width: 640px) {
+    .form-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

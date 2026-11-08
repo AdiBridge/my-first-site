@@ -220,3 +220,184 @@ body > p::before {
         line-height: 1.9;
     }
 }
+
+/* =========================================================
+   Experience & skills section
+   ========================================================= */
+.skills {
+    margin-top: clamp(40px, 7vw, 72px);
+}
+
+.skills h2 {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text);
+}
+
+/* Small accent divider under the heading (mirrors the hero) */
+.skills h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent-2), var(--accent));
+}
+
+.skills-intro {
+    max-width: 660px;
+    margin: 0 auto 32px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.skills-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.skills-grid > li {
+    display: flex;
+}
+
+.skill-card {
+    position: relative;
+    flex: 1;
+    padding: 28px 24px 26px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(160deg, rgba(79, 140, 255, 0.07), transparent 55%),
+        var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Soft glow in the top start corner */
+.skill-card::before {
+    content: "";
+    position: absolute;
+    inset-block-start: -60px;
+    inset-inline-start: -60px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(56, 214, 255, 0.16), transparent 70%);
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    opacity: 0.6;
+}
+
+/* Accent line along the top edge, revealed on hover */
+.skill-card::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-2), var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.skill-icon {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    background: linear-gradient(140deg, rgba(56, 214, 255, 0.18), rgba(79, 140, 255, 0.12));
+    border: 1px solid rgba(56, 214, 255, 0.28);
+    color: var(--accent);
+}
+
+.skill-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.skill-card h3 {
+    position: relative;
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text);
+    /* Card is RTL; keep the English title aligned to the card's start (right) */
+    text-align: right;
+}
+
+.skill-card p {
+    position: relative;
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+}
+
+@media (hover: hover) {
+    .skill-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--surface-border-hover);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .skill-card:hover::before {
+        opacity: 1;
+    }
+
+    .skill-card:hover::after {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill-card,
+    .skill-card::before,
+    .skill-card::after {
+        transition: none;
+    }
+
+    .skill-card:hover {
+        transform: none;
+    }
+}
+
+/* Wide screens: let the grid extend beyond the text column for four cards in a row */
+@media (min-width: 1180px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-inline: -150px;
+    }
+}
+
+/* Small screens: single column */
+@media (max-width: 560px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .skill-card {
+        padding: 24px 20px 22px;
+    }
+}

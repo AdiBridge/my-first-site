@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>האתר הראשון שלי</title>
+    <meta name="description" content="הפורטפוליו המקצועי של Adi Olszanski: Salesforce, פתרונות CRM, אוטומציות ואינטגרציות.">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
+<!-- Site controls: language switcher and theme toggle (shown by script.js) -->
+<div class="site-controls">
+<button type="button" id="lang-toggle" class="lang-toggle" lang="en"
+        aria-label="Switch to English" title="Switch to English" hidden>EN</button>
 <button type="button" id="theme-toggle" class="theme-toggle"
         aria-label="מעבר למצב בהיר" title="מעבר למצב בהיר" hidden>
     <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -19,12 +24,13 @@
         <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
     </svg>
 </button>
+</div>
 
 <header class="hero">
     <div class="hero-text">
         <h1 lang="en">Adi Olszanski</h1>
-        <p><strong>Salesforce ופתרונות CRM | אוטומציות, אינטגרציות וייעול תהליכים עסקיים</strong></p>
-        <p>
+        <p data-i18n="hero.tagline"><strong>Salesforce ופתרונות CRM | אוטומציות, אינטגרציות וייעול תהליכים עסקיים</strong></p>
+        <p data-i18n="hero.intro">
             אני מתמחה בעולם הSalesforce ופתרונות הCRM, עם התמקדות בבניית אוטומציות,
             בחיבור בין מערכות באמצעות אינטגרציות ובייעול תהליכים עסקיים.
             המטרה שלי היא לתרגם צרכים עסקיים לפתרונות טכנולוגיים שחוסכים זמן,
@@ -35,8 +41,8 @@
     <figure class="hero-figure">
         <svg class="hero-diagram" viewBox="0 0 400 380" direction="ltr"
              role="img" aria-labelledby="hero-svg-title hero-svg-desc">
-            <title id="hero-svg-title">איור: מערכות עסקיות מחוברות סביב הCRM</title>
-            <desc id="hero-svg-desc">
+            <title id="hero-svg-title" data-i18n="heroSvg.title">איור: מערכות עסקיות מחוברות סביב הCRM</title>
+            <desc id="hero-svg-desc" data-i18n="heroSvg.desc">
                 איור טכנולוגי שבמרכזו ענן CRM, המחובר בקווי זרימת נתונים לשש מערכות סביבו:
                 API, אוטומציה, נתונים, אנליטיקה, אינטגרציות ותהליכי עבודה.
             </desc>
@@ -148,15 +154,15 @@
         </svg>
     </figure>
 </header>
-<p>
+<p data-i18n="interests">
     תחום העניין הראשון שלי הוא Salesforce ובניית פתרונות CRM.<br>
     תחום נוסף שמעניין אותי הוא אוטומציות שחוסכות זמן ומייעלות תהליכים.<br>
     ובנוסף, פיתוח תוכנה ולמידה של טכנולוגיות חדשות מרתקים אותי.
 </p>
 
 <section class="skills" aria-labelledby="skills-title">
-    <h2 id="skills-title">ניסיון מקצועי ותחומי התמחות</h2>
-    <p class="skills-intro">
+    <h2 id="skills-title" data-i18n="skills.title">ניסיון מקצועי ותחומי התמחות</h2>
+    <p class="skills-intro" data-i18n="skills.intro">
         העבודה שלי מתמקדת ב<span lang="en">Salesforce</span> ובמערכות <span lang="en">CRM</span>,
         עם דגש על בניית אוטומציות עסקיות, פיתוח לוגיקה מותאמת וחיבור בין מערכות.
         הגישה שלי מתחילה בהבנת התהליך העסקי, וממשיכה בפתרון טכנולוגי פשוט, יציב וקל לתחזוקה.
@@ -169,7 +175,7 @@
                     <svg viewBox="0 0 24 24" focusable="false"><path d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7.1 9.1 4.5 4.5 0 0 0 7 18z"/></svg>
                 </span>
                 <h3 lang="en">Salesforce &amp; CRM</h3>
-                <p>
+                <p data-i18n="skills.crm">
                     הקמה והתאמה של סביבת <span lang="en">Salesforce</span>: אובייקטים, שדות, הרשאות ומסכים,
                     כך שהמערכת תשקף את תהליכי העבודה בארגון.
                 </p>
@@ -181,7 +187,7 @@
                     <svg viewBox="0 0 24 24" focusable="false"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7z"/></svg>
                 </span>
                 <h3 lang="en">Automation &amp; Flows</h3>
-                <p>
+                <p data-i18n="skills.flows">
                     בניית תהליכים אוטומטיים באמצעות <span lang="en">Flows</span> לצמצום עבודה ידנית,
                     שמירה על אחידות נתונים וקיצור זמני טיפול.
                 </p>
@@ -193,7 +199,7 @@
                     <svg viewBox="0 0 24 24" focusable="false"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
                 </span>
                 <h3 lang="en">Apex &amp; SOQL</h3>
-                <p>
+                <p data-i18n="skills.apex">
                     פיתוח לוגיקה מותאמת ב<span lang="en">Apex</span> ושליפת נתונים ב<span lang="en">SOQL</span>
                     כאשר נדרש מענה מעבר ליכולות הכלים הדקלרטיביים.
                 </p>
@@ -205,7 +211,7 @@
                     <svg viewBox="0 0 24 24" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
                 </span>
                 <h3 lang="en">Integrations &amp; Analytics</h3>
-                <p>
+                <p data-i18n="skills.integrations">
                     חיבור <span lang="en">Salesforce</span> למערכות נוספות באמצעות <span lang="en">API</span>,
                     והפקת דוחות ולוחות מחוונים שמסייעים לקבל החלטות מבוססות נתונים.
                 </p>
@@ -215,14 +221,14 @@
 </section>
 
 <section class="background" aria-labelledby="background-title">
-    <h2 id="background-title">רקע מקצועי והשכלה</h2>
-    <p class="background-intro">
+    <h2 id="background-title" data-i18n="background.title">רקע מקצועי והשכלה</h2>
+    <p class="background-intro" data-i18n="background.intro">
         מסלול מקצועי בעולם הSalesforce והCRM, לצד הכשרות טכנולוגיות.
     </p>
 
     <!-- Work experience timeline -->
     <div class="experience" role="group" aria-labelledby="experience-title">
-        <h3 id="experience-title" class="background-subtitle">ניסיון מקצועי</h3>
+        <h3 id="experience-title" class="background-subtitle" data-i18n="experience.title">ניסיון מקצועי</h3>
 
         <div class="company">
             <span class="company-icon" aria-hidden="true">
@@ -234,12 +240,16 @@
         <ol class="timeline" role="list">
             <li class="timeline-item timeline-item-current">
                 <article class="timeline-card">
-                    <p class="timeline-date">
-                        <time datetime="2025-04">אפריל 2025</time> – היום
+                    <p class="timeline-date" data-i18n="job1.date">
+                        <span class="date-range">
+                            <time datetime="2025-04">אפריל 2025</time>
+                            <span class="date-sep">–</span>
+                            <span class="date-end">היום</span>
+                        </span>
                         <span class="timeline-badge">תפקיד נוכחי</span>
                     </p>
                     <h4 lang="en">Senior Salesforce Implementation Specialist</h4>
-                    <p>
+                    <p data-i18n="job1.desc">
                         הטמעת <span lang="en">Salesforce</span>, בניית אוטומציות ואינטגרציות,
                         תכנון ארכיטקטורת <span lang="en">CRM</span> וייעול תהליכים עסקיים.
                     </p>
@@ -247,11 +257,15 @@
             </li>
             <li class="timeline-item">
                 <article class="timeline-card">
-                    <p class="timeline-date">
-                        <time datetime="2022-04">אפריל 2022</time> – <time datetime="2025-04">אפריל 2025</time>
+                    <p class="timeline-date" data-i18n="job2.date">
+                        <span class="date-range">
+                            <time datetime="2022-04">אפריל 2022</time>
+                            <span class="date-sep">–</span>
+                            <time datetime="2025-04">אפריל 2025</time>
+                        </span>
                     </p>
                     <h4 lang="en">Salesforce Implementor</h4>
-                    <p>
+                    <p data-i18n="job2.desc">
                         הגדרה והתאמה של <span lang="en">Salesforce</span>, הטמעת מערכות <span lang="en">CRM</span>,
                         בניית תהליכי עבודה עסקיים ואוטומציה של תהליכים.
                     </p>
@@ -262,7 +276,7 @@
 
     <!-- Education & training -->
     <div class="education" role="group" aria-labelledby="education-title">
-        <h3 id="education-title" class="background-subtitle">השכלה והכשרות</h3>
+        <h3 id="education-title" class="background-subtitle" data-i18n="education.title">השכלה והכשרות</h3>
 
         <ul class="education-grid" role="list">
             <li>
@@ -270,13 +284,13 @@
                     <span class="edu-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h16v11H4zM2 20h20M9 10.5l2 2 4-4"/></svg>
                     </span>
-                    <p class="edu-type">
+                    <p class="edu-type" data-i18n="edu1.type">
                         <span lang="en">Bootcamp</span>
                         · <time datetime="2020-11">נובמבר 2020</time> – <time datetime="2021-02">פברואר 2021</time>
                     </p>
                     <h4 lang="en">Experis Academy</h4>
                     <p class="edu-program" lang="en">Software QA and Automation Testing Bootcamp</p>
-                    <p>
+                    <p data-i18n="edu1.desc">
                         הכשרה בבדיקות תוכנה ואוטומציה, כולל <span lang="en">QA Automation</span>
                         ובדיקות ב<span lang="en">Selenium</span>.
                     </p>
@@ -287,11 +301,11 @@
                     <span class="edu-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" focusable="false"><path d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zM8.5 13.5 7 21l5-3 5 3-1.5-7.5"/></svg>
                     </span>
-                    <p class="edu-type">
+                    <p class="edu-type" data-i18n="edu2.type">
                         הכשרה מקצועית · <time datetime="2022-04">אפריל 2022</time>
                     </p>
                     <h4 lang="en">Salesforce Implementation Course</h4>
-                    <p>
+                    <p data-i18n="edu2.desc">
                         קורס בהטמעת <span lang="en">Salesforce</span> מטעם
                         <span lang="en">T-Bridge Consulting and Solutions</span>.
                     </p>
@@ -303,18 +317,18 @@
 
 <section class="process" aria-labelledby="process-title">
     <div class="process-text">
-        <p class="process-eyebrow">אוטומציה של תהליכים עסקיים</p>
-        <h2 id="process-title">מתהליכים מורכבים לפתרונות חכמים</h2>
-        <p>
+        <p class="process-eyebrow" data-i18n="process.eyebrow">אוטומציה של תהליכים עסקיים</p>
+        <h2 id="process-title" data-i18n="process.title">מתהליכים מורכבים לפתרונות חכמים</h2>
+        <p data-i18n="process.p1">
             כל פתרון טוב מתחיל בהבנה מעמיקה של התהליך העסקי: מי לוקח בו חלק, היכן נוצרים עיכובים
             ואילו שלבים עדיין מתבצעים באופן ידני. מתוך ההבנה הזו ניתן לתרגם דרישות עסקיות
             לפתרון טכני ממוקד ב<span lang="en">Salesforce</span>.
         </p>
-        <p>
+        <p data-i18n="process.p2">
             שילוב של אוטומציות <span lang="en">CRM</span>, לוגיקה מותאמת ואינטגרציות בין מערכות
             מאפשר למידע לזרום בצורה רציפה, ולתהליך להתנהל באופן עקבי, שקוף ואמין.
         </p>
-        <p class="process-conclusion">
+        <p class="process-conclusion" data-i18n="process.conclusion">
             התוצאה: תהליכים יעילים יותר, פחות עבודה ידנית ופתרונות ברורים וקלים לתחזוקה,
             שממשיכים לשרת את הארגון גם כשהצרכים שלו משתנים.
         </p>
@@ -323,8 +337,8 @@
     <figure class="process-figure">
         <svg class="process-diagram" viewBox="0 0 360 470" direction="rtl"
              role="img" aria-labelledby="process-svg-title process-svg-desc">
-            <title id="process-svg-title">תרשים זרימה: מאתגר עסקי לאוטומציה</title>
-            <desc id="process-svg-desc">
+            <title id="process-svg-title" data-i18n="processSvg.title">תרשים זרימה: מאתגר עסקי לאוטומציה</title>
+            <desc id="process-svg-desc" data-i18n="processSvg.desc">
                 תרשים בשלושה שלבים מלמעלה למטה. שלב 1: האתגר העסקי – הבנת הבעיה העסקית.
                 שלב 2: תכנון הפתרון – תכנון פתרון טכני מותאם.
                 שלב 3: אוטומציה וייעול – אוטומציה ושיפור של התהליך.
@@ -365,8 +379,8 @@
                       fill="url(#pf-node)" stroke="#5ea0ff" stroke-opacity="0.3"/>
                 <circle cx="306" cy="70" r="20" fill="none" stroke="url(#pf-accent)" stroke-width="2"/>
                 <text x="306" y="77" class="pf-num" text-anchor="middle">1</text>
-                <text x="272" y="62" class="pf-title" text-anchor="start">האתגר העסקי</text>
-                <text x="272" y="90" class="pf-sub" text-anchor="start">הבנת הבעיה והצורך העסקי</text>
+                <text x="272" y="62" data-i18n="processSvg.s1title" class="pf-title" text-anchor="start">האתגר העסקי</text>
+                <text x="272" y="90" data-i18n="processSvg.s1sub" class="pf-sub" text-anchor="start">הבנת הבעיה והצורך העסקי</text>
                 <!-- Icon: magnifier -->
                 <g class="pf-icon" transform="translate(34 50)">
                     <circle cx="16" cy="16" r="11"/>
@@ -381,8 +395,8 @@
                       fill="url(#pf-node)" stroke="#5ea0ff" stroke-opacity="0.3"/>
                 <circle cx="306" cy="234" r="20" fill="none" stroke="url(#pf-accent)" stroke-width="2"/>
                 <text x="306" y="241" class="pf-num" text-anchor="middle">2</text>
-                <text x="272" y="226" class="pf-title" text-anchor="start">תכנון הפתרון</text>
-                <text x="272" y="254" class="pf-sub" text-anchor="start">תכנון פתרון טכני מותאם</text>
+                <text x="272" y="226" data-i18n="processSvg.s2title" class="pf-title" text-anchor="start">תכנון הפתרון</text>
+                <text x="272" y="254" data-i18n="processSvg.s2sub" class="pf-sub" text-anchor="start">תכנון פתרון טכני מותאם</text>
                 <!-- Icon: connected building blocks -->
                 <g class="pf-icon" transform="translate(32 214)">
                     <rect x="1" y="1" width="14" height="14" rx="3"/>
@@ -398,8 +412,8 @@
                       fill="url(#pf-node-final)" stroke="url(#pf-accent)" stroke-width="1.5"/>
                 <circle cx="306" cy="398" r="20" fill="url(#pf-accent)"/>
                 <text x="306" y="405" class="pf-num pf-num-final" text-anchor="middle">3</text>
-                <text x="272" y="390" class="pf-title" text-anchor="start">אוטומציה וייעול</text>
-                <text x="272" y="418" class="pf-sub" text-anchor="start">אוטומציה ושיפור התהליך</text>
+                <text x="272" y="390" data-i18n="processSvg.s3title" class="pf-title" text-anchor="start">אוטומציה וייעול</text>
+                <text x="272" y="418" data-i18n="processSvg.s3sub" class="pf-sub" text-anchor="start">אוטומציה ושיפור התהליך</text>
                 <!-- Icon: lightning bolt inside a cycle -->
                 <g class="pf-icon" transform="translate(32 378)">
                     <path d="M33 14A15 15 0 0 0 7 9"/>
@@ -413,9 +427,9 @@
 </section>
 
 <section class="contact" aria-labelledby="contact-title">
-    <p class="contact-eyebrow">יצירת קשר</p>
-    <h2 id="contact-title">בואו נדבר על הפתרון הבא</h2>
-    <p class="contact-text">
+    <p class="contact-eyebrow" data-i18n="contact.eyebrow">יצירת קשר</p>
+    <h2 id="contact-title" data-i18n="contact.title">בואו נדבר על הפתרון הבא</h2>
+    <p class="contact-text" data-i18n="contact.text">
         יש לכם תהליך שמחכה לאוטומציה, מערכת שצריכה להתחבר לSalesforce,
         או רעיון לשיפור הCRM בארגון? אשמח לשמוע, להחליף מחשבות ולחשוב יחד
         על פתרון טכנולוגי שיעבוד בשבילכם.
@@ -429,8 +443,8 @@
                 <svg class="contact-btn-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>
-                <span>הפרופיל שלי ב<span lang="en">GitHub</span></span>
-                <span class="visually-hidden">(נפתח בכרטיסייה חדשה)</span>
+                <span data-i18n="contact.github">הפרופיל שלי ב<span lang="en">GitHub</span></span>
+                <span class="visually-hidden" data-i18n="contact.newTab">(נפתח בכרטיסייה חדשה)</span>
             </a>
         </li>
 
@@ -441,8 +455,8 @@
                 <svg class="contact-btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 4.89v6.25zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
                 </svg>
-                <span>בואו נתחבר ב<span lang="en">LinkedIn</span></span>
-                <span class="visually-hidden">(נפתח בכרטיסייה חדשה)</span>
+                <span data-i18n="contact.linkedin">בואו נתחבר ב<span lang="en">LinkedIn</span></span>
+                <span class="visually-hidden" data-i18n="contact.newTab">(נפתח בכרטיסייה חדשה)</span>
             </a>
         </li>
     </ul>
@@ -456,21 +470,21 @@
     <form id="contact-form" class="contact-form"
           action="https://formspree.io/f/maeezgnv" method="POST"
           aria-labelledby="contact-form-title" aria-describedby="contact-form-note">
-        <h3 id="contact-form-title" class="contact-form-title">השאירו הודעה</h3>
-        <p id="contact-form-note" class="contact-form-note">
+        <h3 id="contact-form-title" class="contact-form-title" data-i18n="form.title">השאירו הודעה</h3>
+        <p id="contact-form-note" class="contact-form-note" data-i18n="form.note">
             כל השדות הם שדות חובה.
         </p>
 
         <!-- Formspree options: email subject, and a honeypot field that bots fill in -->
         <input type="hidden" name="_subject" value="הודעה חדשה מאתר הפורטפוליו">
         <div class="form-honeypot" aria-hidden="true">
-            <label for="cf-gotcha">אין למלא שדה זה</label>
+            <label for="cf-gotcha" data-i18n="form.honeypot">אין למלא שדה זה</label>
             <input type="text" id="cf-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
         </div>
 
         <div class="form-row">
             <div class="form-field">
-                <label for="cf-name">שם מלא</label>
+                <label for="cf-name" data-i18n="form.name">שם מלא</label>
                 <input type="text" id="cf-name" name="name"
                        autocomplete="name" required
                        aria-describedby="cf-name-error">
@@ -478,7 +492,7 @@
             </div>
 
             <div class="form-field">
-                <label for="cf-email">כתובת אימייל</label>
+                <label for="cf-email" data-i18n="form.email">כתובת אימייל</label>
                 <input type="email" id="cf-email" name="email" dir="ltr"
                        autocomplete="email" inputmode="email" spellcheck="false"
                        placeholder="name@example.com" required
@@ -488,7 +502,7 @@
         </div>
 
         <div class="form-field">
-            <label for="cf-message">הודעה</label>
+            <label for="cf-message" data-i18n="form.message">הודעה</label>
             <textarea id="cf-message" name="message" rows="5" required
                       aria-describedby="cf-message-error"></textarea>
             <p id="cf-message-error" class="field-error"></p>

@@ -1673,3 +1673,154 @@ body > p::before {
     transform: none;
     box-shadow: none;
 }
+
+/* =========================================================
+   Site controls: language switcher + theme toggle
+   ========================================================= */
+.site-controls {
+    position: fixed;
+    top: 16px;
+    inset-inline-end: 16px; /* left in RTL, right in LTR */
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+}
+
+/* The theme toggle now sits inside the fixed container */
+.site-controls .theme-toggle {
+    position: static;
+}
+
+.lang-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--accent);
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-toggle[hidden] {
+    display: none;
+}
+
+@media (hover: hover) {
+    .lang-toggle:hover {
+        transform: translateY(-2px);
+        border-color: var(--surface-border-hover);
+        box-shadow: var(--shadow-hover);
+    }
+}
+
+.lang-toggle:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lang-toggle {
+        transition: none;
+    }
+
+    .lang-toggle:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-controls {
+        top: 8px;
+        inset-inline-end: 8px;
+        gap: 8px;
+    }
+
+    .lang-toggle {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Hide the page briefly while a saved English preference is applied (set by script.js) */
+html.i18n-pending body {
+    visibility: hidden;
+}
+
+/* =========================================================
+   English / LTR layout
+   Most rules use logical properties and flip automatically;
+   these override the few physical (right-aligned) ones.
+   ========================================================= */
+html[dir="ltr"] body {
+    text-align: left;
+}
+
+html[dir="ltr"] .skill-card h3,
+html[dir="ltr"] .timeline-card h4,
+html[dir="ltr"] .edu-card h4,
+html[dir="ltr"] .edu-card .edu-program,
+html[dir="ltr"] .contact-form {
+    text-align: left;
+}
+
+html[dir="ltr"] .background-subtitle::after {
+    background: linear-gradient(to right, transparent, rgba(var(--accent-rgb), 0.35));
+}
+
+@media (min-width: 860px) {
+    html[dir="ltr"] .hero,
+    html[dir="ltr"] .hero h1 {
+        text-align: left;
+    }
+
+    html[dir="ltr"] .hero h1::after {
+        margin: 18px auto 0 0;
+    }
+}
+
+/* Process diagram: English labels read left to right, aligned beside the step number */
+html[dir="ltr"] .process-diagram {
+    direction: ltr;
+}
+
+html[dir="ltr"] .process-diagram .pf-title,
+html[dir="ltr"] .process-diagram .pf-sub {
+    text-anchor: end;
+}
+
+html[dir="ltr"] .process-diagram .pf-title {
+    font-size: 18px;
+}
+
+html[dir="ltr"] .process-diagram .pf-sub {
+    font-size: 14px;
+}
+
+/* ---------- Timeline date ranges ----------
+   Start date, separator and end date are separate flex items. Each item is
+   laid out (and bidi-isolated) on its own, so the order follows the page
+   direction (start → end) and the gap on both sides of the dash is equal,
+   regardless of how Hebrew words, numbers and the neutral dash mix. */
+.date-range {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45em;
+    white-space: nowrap;
+}
+
+.date-range > * {
+    unicode-bidi: isolate;
+}

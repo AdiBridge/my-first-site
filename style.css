@@ -401,3 +401,178 @@ body > p::before {
         padding: 24px 20px 22px;
     }
 }
+
+/* =========================================================
+   Featured section: business process automation
+   ========================================================= */
+.process {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-top: clamp(48px, 8vw, 88px);
+    padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 44px);
+    overflow: hidden;
+
+    /* Deeper, more saturated panel than the skill cards, with a cyan-to-blue edge */
+    background:
+        radial-gradient(520px 320px at 100% 0%, rgba(56, 214, 255, 0.12), transparent 65%),
+        radial-gradient(480px 300px at 0% 100%, rgba(79, 140, 255, 0.14), transparent 65%),
+        linear-gradient(160deg, #0e2342 0%, #08152a 100%);
+    border: 1px solid transparent;
+    border-radius: calc(var(--radius) + 6px);
+    background-clip: padding-box;
+    box-shadow: var(--shadow), 0 0 0 1px rgba(56, 214, 255, 0.22);
+}
+
+/* Vertical accent bar on the start (right) edge */
+.process::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2) 60%, transparent);
+}
+
+.process-text {
+    position: relative;
+}
+
+.process-eyebrow {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 4px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    color: var(--accent);
+    background: rgba(56, 214, 255, 0.1);
+    border: 1px solid rgba(56, 214, 255, 0.3);
+    border-radius: 999px;
+}
+
+.process h2 {
+    margin: 0 0 18px;
+    font-size: clamp(1.6rem, 4.2vw, 2.15rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+
+    color: var(--text); /* fallback */
+    background: linear-gradient(120deg, #ffffff 0%, #cfe6ff 50%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.process-text p:not(.process-eyebrow) {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+.process-text .process-conclusion {
+    margin: 22px 0 0;
+    padding: 14px 18px;
+    color: var(--text);
+    background: rgba(56, 214, 255, 0.06);
+    border-inline-start: 3px solid var(--accent);
+    /* Round only the end-side corners (left in RTL) */
+    border-start-end-radius: 12px;
+    border-end-end-radius: 12px;
+}
+
+/* ---------- Diagram ---------- */
+.process-figure {
+    margin: 0;
+    justify-self: center;
+    width: 100%;
+    max-width: 380px;
+}
+
+.process-diagram {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    font-family: var(--font);
+    filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
+}
+
+.process-diagram .pf-connector {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-dasharray: 4 6;
+    stroke-linecap: round;
+    stroke-opacity: 0.8;
+}
+
+.process-diagram .pf-num {
+    font-size: 18px;
+    font-weight: 700;
+    fill: var(--accent);
+}
+
+.process-diagram .pf-num-final {
+    fill: var(--bg-deep);
+}
+
+.process-diagram .pf-title {
+    font-size: 20px;
+    font-weight: 700;
+    fill: var(--text);
+}
+
+.process-diagram .pf-sub {
+    font-size: 15px;
+    fill: var(--text-muted);
+}
+
+.process-diagram .pf-icon {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+}
+
+/* Subtle, motion-free hover: brighten the frame */
+@media (hover: hover) {
+    .process {
+        transition: box-shadow 0.25s ease;
+    }
+
+    .process:hover {
+        box-shadow: var(--shadow-hover), 0 0 0 1px rgba(56, 214, 255, 0.4);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .process {
+        transition: none;
+    }
+}
+
+/* Desktop: two columns — text on the start (right) side, diagram on the end (left) */
+@media (min-width: 760px) {
+    .process {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        gap: clamp(28px, 4vw, 48px);
+    }
+}
+
+/* Small screens: stacked, diagram uses full available width */
+@media (max-width: 560px) {
+    .process {
+        gap: 28px;
+    }
+
+    .process-figure {
+        max-width: 360px;
+    }
+}

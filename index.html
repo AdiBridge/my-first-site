@@ -8,15 +8,133 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <h1 lang="en">Adi Olszanski</h1>
-    <p><strong>Salesforce ופתרונות CRM | אוטומציות, אינטגרציות וייעול תהליכים עסקיים</strong></p>
-    <p>
-        אני מתמחה בעולם הSalesforce ופתרונות הCRM, עם התמקדות בבניית אוטומציות,
-        בחיבור בין מערכות באמצעות אינטגרציות ובייעול תהליכים עסקיים.
-        המטרה שלי היא לתרגם צרכים עסקיים לפתרונות טכנולוגיים שחוסכים זמן,
-        מצמצמים עבודה ידנית ומאפשרים לארגונים לעבוד בצורה חכמה ויעילה יותר.
-    </p>
+<header class="hero">
+    <div class="hero-text">
+        <h1 lang="en">Adi Olszanski</h1>
+        <p><strong>Salesforce ופתרונות CRM | אוטומציות, אינטגרציות וייעול תהליכים עסקיים</strong></p>
+        <p>
+            אני מתמחה בעולם הSalesforce ופתרונות הCRM, עם התמקדות בבניית אוטומציות,
+            בחיבור בין מערכות באמצעות אינטגרציות ובייעול תהליכים עסקיים.
+            המטרה שלי היא לתרגם צרכים עסקיים לפתרונות טכנולוגיים שחוסכים זמן,
+            מצמצמים עבודה ידנית ומאפשרים לארגונים לעבוד בצורה חכמה ויעילה יותר.
+        </p>
+    </div>
+
+    <figure class="hero-figure">
+        <svg class="hero-diagram" viewBox="0 0 400 380" direction="ltr"
+             role="img" aria-labelledby="hero-svg-title hero-svg-desc">
+            <title id="hero-svg-title">איור: מערכות עסקיות מחוברות סביב הCRM</title>
+            <desc id="hero-svg-desc">
+                איור טכנולוגי שבמרכזו ענן CRM, המחובר בקווי זרימת נתונים לשש מערכות סביבו:
+                API, אוטומציה, נתונים, אנליטיקה, אינטגרציות ותהליכי עבודה.
+            </desc>
+
+            <defs>
+                <linearGradient id="hd-accent" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#38d6ff"/>
+                    <stop offset="1" stop-color="#4f8cff"/>
+                </linearGradient>
+                <radialGradient id="hd-hub" cx="0.5" cy="0.35" r="0.7">
+                    <stop offset="0" stop-color="#1a4a78"/>
+                    <stop offset="1" stop-color="#0c1f3b"/>
+                </radialGradient>
+                <linearGradient id="hd-node" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#14294a"/>
+                    <stop offset="1" stop-color="#0b1a31"/>
+                </linearGradient>
+                <radialGradient id="hd-glow" cx="0.5" cy="0.5" r="0.5">
+                    <stop offset="0" stop-color="#38d6ff" stop-opacity="0.28"/>
+                    <stop offset="1" stop-color="#38d6ff" stop-opacity="0"/>
+                </radialGradient>
+                <pattern id="hd-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#5ea0ff" fill-opacity="0.16"/>
+                </pattern>
+                <filter id="hd-soft" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="6"/>
+                </filter>
+            </defs>
+
+            <!-- Backdrop -->
+            <rect width="400" height="380" rx="24" fill="url(#hd-dots)"/>
+            <circle cx="200" cy="190" r="150" fill="url(#hd-glow)"/>
+
+            <!-- Orbits -->
+            <circle class="hd-orbit" cx="200" cy="190" r="100"/>
+            <circle class="hd-orbit hd-orbit-faint" cx="200" cy="190" r="150"/>
+
+            <!-- Outer mesh linking the surrounding systems -->
+            <path class="hd-mesh" d="M200 40 330 115 330 265 200 340 70 265 70 115z"/>
+
+            <!-- Connections: hub to each system -->
+            <g class="hd-links">
+                <path d="M200 190 200 40"/>
+                <path d="M200 190 330 115"/>
+                <path d="M200 190 330 265"/>
+                <path d="M200 190 200 340"/>
+                <path d="M200 190 70 265"/>
+                <path d="M200 190 70 115"/>
+            </g>
+            <g class="hd-flow">
+                <path d="M200 190 200 40"/>
+                <path d="M200 190 330 115"/>
+                <path d="M200 190 330 265"/>
+                <path d="M200 190 200 340"/>
+                <path d="M200 190 70 265"/>
+                <path d="M200 190 70 115"/>
+            </g>
+
+            <!-- Central hub: CRM cloud -->
+            <circle class="hd-pulse" cx="200" cy="190" r="58"/>
+            <circle cx="200" cy="190" r="62" fill="#38d6ff" fill-opacity="0.25" filter="url(#hd-soft)"/>
+            <circle cx="200" cy="190" r="52" fill="url(#hd-hub)" stroke="url(#hd-accent)" stroke-width="2"/>
+            <path class="hd-hub-icon" transform="translate(181 156) scale(1.6)"
+                  d="M7 18h10a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7.1 9.1 4.5 4.5 0 0 0 7 18z"/>
+            <text class="hd-hub-label" x="200" y="214" text-anchor="middle">CRM</text>
+
+            <!-- Surrounding systems -->
+            <g class="hd-node">
+                <rect x="162" y="11" width="76" height="58" rx="14"/>
+                <path class="hd-icon" transform="translate(190 16) scale(0.85)" d="m8 7-5 5 5 5M16 7l5 5-5 5"/>
+                <text x="200" y="59" text-anchor="middle">API</text>
+            </g>
+            <g class="hd-node">
+                <rect x="292" y="86" width="76" height="58" rx="14"/>
+                <path class="hd-icon" transform="translate(320 91) scale(0.85)" d="M13 3 5 14h6l-1 7 8-11h-6l1-7z"/>
+                <text x="330" y="134" text-anchor="middle">Automation</text>
+            </g>
+            <g class="hd-node">
+                <rect x="292" y="236" width="76" height="58" rx="14"/>
+                <g class="hd-icon" transform="translate(320 241) scale(0.85)">
+                    <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                    <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>
+                </g>
+                <text x="330" y="284" text-anchor="middle">Data</text>
+            </g>
+            <g class="hd-node">
+                <rect x="162" y="311" width="76" height="58" rx="14"/>
+                <path class="hd-icon" transform="translate(190 316) scale(0.85)" d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>
+                <text x="200" y="359" text-anchor="middle">Analytics</text>
+            </g>
+            <g class="hd-node">
+                <rect x="32" y="236" width="76" height="58" rx="14"/>
+                <path class="hd-icon" transform="translate(60 241) scale(0.85)"
+                      d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>
+                <text x="70" y="284" text-anchor="middle">Integrations</text>
+            </g>
+            <g class="hd-node">
+                <rect x="32" y="86" width="76" height="58" rx="14"/>
+                <path class="hd-icon" transform="translate(60 91) scale(0.85)"
+                      d="M4 3h7v6H4zM13 15h7v6h-7zM7.5 9v3a3 3 0 0 0 3 3H13"/>
+                <text x="70" y="134" text-anchor="middle">Workflows</text>
+            </g>
+
+            <!-- Accent sparks on the outer orbit -->
+            <circle cx="265" cy="55" r="2.5" fill="#38d6ff"/>
+            <circle cx="350" cy="190" r="2" fill="#4f8cff"/>
+            <circle cx="120" cy="320" r="2.5" fill="#38d6ff"/>
+            <circle cx="50" cy="190" r="2" fill="#4f8cff"/>
+        </svg>
+    </figure>
 </header>
 <p>
     תחום העניין הראשון שלי הוא Salesforce ובניית פתרונות CRM.<br>

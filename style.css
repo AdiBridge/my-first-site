@@ -1078,3 +1078,187 @@ body > p::before {
         padding: 22px 18px 20px;
     }
 }
+
+/* =========================================================
+   Hero illustration: connected systems around the CRM
+   ========================================================= */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: center;
+}
+
+.hero-text {
+    position: relative;
+}
+
+.hero-figure {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+}
+
+.hero-diagram {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    font-family: var(--font);
+}
+
+.hero-diagram .hd-orbit {
+    fill: none;
+    stroke: #5ea0ff;
+    stroke-opacity: 0.22;
+    stroke-width: 1;
+    stroke-dasharray: 2 6;
+}
+
+.hero-diagram .hd-orbit-faint {
+    stroke-opacity: 0.12;
+}
+
+.hero-diagram .hd-mesh {
+    fill: none;
+    stroke: url(#hd-accent);
+    stroke-opacity: 0.25;
+    stroke-width: 1;
+    stroke-dasharray: 3 7;
+}
+
+.hero-diagram .hd-links path {
+    fill: none;
+    stroke: #4f8cff;
+    stroke-opacity: 0.35;
+    stroke-width: 1.5;
+}
+
+/* Data "packets" travelling outward from the hub */
+.hero-diagram .hd-flow path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 2 12;
+    animation: hd-flow 2.8s linear infinite;
+}
+
+.hero-diagram .hd-pulse {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hd-pulse 3.2s ease-out infinite;
+}
+
+.hero-diagram .hd-hub-icon {
+    fill: rgba(56, 214, 255, 0.14);
+    stroke: var(--accent);
+    stroke-width: 1.2;
+    stroke-linejoin: round;
+}
+
+.hero-diagram .hd-hub-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    fill: var(--text);
+}
+
+.hero-diagram .hd-node rect {
+    fill: url(#hd-node);
+    stroke: #5ea0ff;
+    stroke-opacity: 0.35;
+    stroke-width: 1;
+}
+
+.hero-diagram .hd-node text {
+    font-size: 10.5px;
+    font-weight: 600;
+    fill: var(--text-muted);
+}
+
+.hero-diagram .hd-icon,
+.hero-diagram .hd-icon * {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@keyframes hd-flow {
+    to {
+        stroke-dashoffset: -28;
+    }
+}
+
+@keyframes hd-pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.45);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-diagram .hd-flow path,
+    .hero-diagram .hd-pulse {
+        animation: none;
+    }
+
+    .hero-diagram .hd-pulse {
+        opacity: 0.35;
+    }
+}
+
+/* Desktop: text on the start (right) side, illustration on the end (left) */
+@media (min-width: 860px) {
+    .hero {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: clamp(24px, 3vw, 40px);
+        text-align: right;
+    }
+
+    /* The name is an LTR element; align it physically to the right */
+    .hero h1 {
+        text-align: right;
+    }
+
+    .hero h1::after {
+        margin: 18px 0 0 auto;
+    }
+
+    .hero-text p:first-of-type,
+    .hero-text p:last-of-type {
+        margin-inline: 0;
+    }
+
+    .hero-figure {
+        max-width: 380px;
+    }
+}
+
+/* Wide screens: give the hero extra room, like the skills grid */
+@media (min-width: 1180px) {
+    .hero {
+        margin-inline: -120px;
+    }
+}
+
+/* Small screens: a little tighter between text and illustration */
+@media (max-width: 600px) {
+    .hero {
+        gap: 20px;
+    }
+
+    .hero-figure {
+        max-width: 320px;
+    }
+}

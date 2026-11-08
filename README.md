@@ -17,10 +17,11 @@ The page is made up of the following sections:
 - **Professional experience and areas of expertise** – Four skill cards: Salesforce & CRM, Automation & Flows, Apex & SOQL, and Integrations & Analytics.
 - **Professional background and education**
   - A work experience timeline for my roles at T-Bridge Consulting and Solutions.
-  - Education and training cards for The Open University of Israel, Experis Academy, and a Salesforce Implementation Course.
+  - Education and training cards for Experis Academy and a Salesforce Implementation Course.
 - **Business process automation showcase** – An explanation of my approach to business process automation, accompanied by a three-stage inline SVG flow diagram.
 - **Contact** – An invitation to connect, with GitHub and LinkedIn buttons that open in a new tab.
 - **Footer** – Copyright notice.
+- **Dark / light theme toggle** – A button in the top corner switches between the default dark theme and a light theme. The visitor's choice is saved in `localStorage` when available and restored on reload; if storage is unavailable, the toggle still works for the current visit.
 
 ### Design and accessibility
 
@@ -28,7 +29,8 @@ The page is made up of the following sections:
 - Responsive layouts built with CSS Grid and Flexbox, with breakpoints for mobile, tablet, and wide screens.
 - Semantic HTML (`header`, `section`, `article`, `figure`, `footer`) and labeled section headings.
 - Accessible SVG illustrations with Hebrew titles and descriptions.
-- Visible keyboard focus styles on the contact buttons.
+- Visible keyboard focus styles on the contact buttons and the theme toggle.
+- The theme toggle has a Hebrew accessible label that updates with the current theme.
 - Subtle hover effects and a CSS-only animation in the hero illustration, all of which respect the user's `prefers-reduced-motion` setting.
 
 ## Technologies
@@ -36,8 +38,9 @@ The page is made up of the following sections:
 - **HTML5**
 - **CSS3** – custom properties, Grid, Flexbox, logical properties, media queries, and keyframe animations
 - **Inline SVG** – illustrations and icons
+- **JavaScript** – a small vanilla script for the dark / light theme toggle
 
-The site does not use JavaScript, frameworks, external libraries, or external images.
+The site does not use frameworks, external libraries, or external images.
 
 ## Getting Started
 
@@ -62,7 +65,8 @@ No build step or dependencies are required.
 ```
 my-first-site/
 ├── index.html   # Page content and inline SVG illustrations
-├── style.css    # All styling, responsive layout, and animations
+├── style.css    # All styling, dark and light themes, responsive layout, and animations
+├── script.js    # Dark / light theme toggle with saved preference
 ├── README.md    # Project documentation
 └── .gitignore   # Files excluded from version control
 ```

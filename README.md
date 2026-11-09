@@ -1,6 +1,6 @@
 # Adi Olszanski – Personal Portfolio
 
-A professional portfolio presenting my background in Salesforce, CRM solutions, automation, integrations, and software development.
+A professional portfolio presenting my work in Information Systems, business automation, and system integrations, specializing in Salesforce, CRM solutions, and business process optimization.
 
 **Live website:** [adibridge.github.io/my-first-site](https://adibridge.github.io/my-first-site/)
 
@@ -12,13 +12,13 @@ This is a single-page, static, bilingual portfolio website. Hebrew (right-to-lef
 
 The page is made up of the following sections:
 
-- **Hero introduction** – Name, professional tagline, and a short introduction, displayed alongside an original inline SVG illustration of connected systems (CRM, API, Automation, Data, Analytics, Integrations, and Workflows). On desktop the text and illustration sit side by side; on mobile they stack vertically.
+- **Hero introduction** – Name, professional tagline ("Information Systems, Automation & Integrations", specializing in Salesforce, CRM solutions, and business process optimization), and a short introduction, displayed alongside an original inline SVG illustration of connected systems (CRM, API, Automation, Data, Analytics, Integrations, and Workflows). On desktop the text and illustration sit side by side; on mobile they stack vertically.
 - **Areas of interest** – A short paragraph describing my main professional interests.
-- **Professional experience and areas of expertise** – Four skill cards: Salesforce & CRM, Automation & Flows, Apex & SOQL, and Integrations & Analytics.
+- **Professional experience and areas of expertise** – Four skill cards: Salesforce & CRM, Business Process Automation (Salesforce Flows and Make.com), Apex & SOQL, and Integrations & Data (API integrations, reports, dashboards, and data processes).
 - **Professional background and education**
   - A work experience timeline for my roles at T-Bridge Consulting and Solutions.
   - Education and training cards for Experis Academy and a Salesforce Implementation Course.
-- **Business process automation showcase** – An explanation of my approach to business process automation, accompanied by a three-stage inline SVG flow diagram.
+- **Business process automation showcase** – An explanation of my approach to business process automation across Salesforce, Make.com, and other business systems, accompanied by a three-stage inline SVG flow diagram.
 - **Contact** – An invitation to connect, with GitHub and LinkedIn buttons that open in a new tab, and a contact form (see [Contact form](#contact-form)).
 - **Footer** – Copyright notice.
 - **Hebrew / English language switcher** – A button next to the theme toggle switches the entire page between Hebrew and English without reloading. See [Bilingual support](#bilingual-support).

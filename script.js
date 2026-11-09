@@ -43,29 +43,32 @@
      * Translations
      * ------------------------------------------------------------------ */
     var CONTENT_EN = {
-        'hero.tagline': '<strong>Salesforce &amp; CRM Solutions | Automation, Integrations, and Business Process Optimization</strong>',
-        'hero.intro': 'I specialize in Salesforce and CRM solutions, with a focus on building automations, ' +
-            'connecting systems through integrations, and optimizing business processes. ' +
+        'hero.tagline': '<strong>Information Systems, Automation &amp; Integrations</strong><br>' +
+            'Specializing in Salesforce, CRM Solutions &amp; Business Process Optimization',
+        'hero.intro': 'My work in Information Systems combines implementing and customizing business systems, ' +
+            'building automations, connecting systems through integrations, and optimizing business processes, ' +
+            'with Salesforce as my core specialization. ' +
             'My goal is to translate business needs into technology solutions that save time, ' +
             'reduce manual work, and help organizations work smarter and more efficiently.',
         'heroSvg.title': 'Illustration: business systems connected around the CRM',
         'heroSvg.desc': 'A technology illustration with a CRM cloud at its center, connected by data-flow lines ' +
             'to six surrounding systems: API, Automation, Data, Analytics, Integrations, and Workflows.',
-        'interests': 'My primary area of interest is Salesforce and building CRM solutions.<br>' +
-            'Another area that interests me is automation that saves time and streamlines processes.<br>' +
+        'interests': 'My primary area of interest is Information Systems, especially Salesforce and building CRM solutions.<br>' +
+            'Another area that interests me is automation and integrations that connect systems, save time, and streamline processes.<br>' +
             'I am also passionate about software development and learning new technologies.',
 
         'skills.title': 'Professional Experience and Expertise',
-        'skills.intro': 'My work focuses on Salesforce and CRM systems, with an emphasis on building business automations, ' +
-            'developing custom logic, and connecting systems. My approach starts with understanding the business process ' +
+        'skills.intro': 'My work combines business process analysis, system implementation and customization, building automations, ' +
+            'developing custom logic, and connecting systems, with Salesforce and CRM systems as my professional foundation. ' +
+            'My approach starts with understanding the business process ' +
             'and continues with a technical solution that is simple, stable, and easy to maintain.',
         'skills.crm': 'Setting up and customizing Salesforce environments: objects, fields, permissions, and page layouts, ' +
-            'so the system reflects how the organization works.',
-        'skills.flows': 'Building automated processes with Flows to reduce manual work, keep data consistent, ' +
-            'and shorten handling times.',
+            'so the system reflects how the organization works, alongside work with CRM solutions and other business systems.',
+        'skills.flows': 'Analyzing business processes and building automations with Salesforce Flows and Make.com scenarios ' +
+            'to reduce manual work, keep data consistent, and shorten handling times.',
         'skills.apex': 'Developing custom logic in Apex and querying data with SOQL when requirements go beyond ' +
             'what declarative tools can do.',
-        'skills.integrations': 'Connecting Salesforce to other systems through APIs, and building reports and dashboards ' +
+        'skills.integrations': 'Connecting business systems through APIs, and building reports, dashboards, and data processes ' +
             'that support data-driven decisions.',
 
         'background.title': 'Professional Background and Education',
@@ -90,8 +93,8 @@
         'process.title': 'From Complex Processes to Smart Solutions',
         'process.p1': 'Every good solution starts with a deep understanding of the business process: who is involved, ' +
             'where delays occur, and which steps are still done manually. From that understanding, business requirements ' +
-            'can be translated into a focused technical solution in Salesforce.',
-        'process.p2': 'Combining CRM automation, custom logic, and system integrations lets information flow seamlessly, ' +
+            'can be translated into a focused technical solution, in Salesforce, in Make.com, or in the relevant business systems.',
+        'process.p2': 'Combining automation, custom logic, and integrations between business systems lets information flow seamlessly, ' +
             'and keeps the process consistent, transparent, and reliable.',
         'process.conclusion': 'The result: more efficient processes, less manual work, and clear, maintainable solutions ' +
             'that keep serving the organization as its needs change.',
@@ -108,9 +111,10 @@
 
         'contact.eyebrow': 'Get in Touch',
         'contact.title': 'Let’s Talk About Your Next Solution',
-        'contact.text': 'Do you have a process waiting to be automated, a system that needs to connect to Salesforce, ' +
-            'or an idea for improving your organization’s CRM? I would be happy to hear about it, exchange ideas, ' +
-            'and think together about a technology solution that works for you.',
+        'contact.text': 'Have a process that could benefit from automation, business systems that need to work together, ' +
+            'or an idea for improving your organization’s information systems?<br>' +
+            'I’d love to hear about your challenges, explore the possibilities together, ' +
+            'and find a technology solution that fits your needs.',
         'contact.github': 'My GitHub profile',
         'contact.linkedin': 'Let’s connect on LinkedIn',
         'contact.newTab': '(opens in a new tab)',
@@ -128,7 +132,8 @@
             switchLanguage: 'מעבר לעברית',
             themeToLight: 'מעבר למצב בהיר',
             themeToDark: 'מעבר למצב כהה',
-            description: 'הפורטפוליו המקצועי של Adi Olszanski: Salesforce, פתרונות CRM, אוטומציות ואינטגרציות.',
+            title: 'Adi Olszanski | מערכות מידע, אוטומציות ואינטגרציות',
+            description: 'הפורטפוליו המקצועי של Adi Olszanski: מערכות מידע, אוטומציות ואינטגרציות, עם התמחות בSalesforce ובפתרונות CRM.',
 
             submit: 'שליחת הודעה',
             nameMissing: 'נא להזין שם מלא.',
@@ -146,8 +151,9 @@
             switchLanguage: 'Switch to English',
             themeToLight: 'Switch to light mode',
             themeToDark: 'Switch to dark mode',
-            title: 'Adi Olszanski | Salesforce & CRM Portfolio',
-            description: 'Professional portfolio of Adi Olszanski: Salesforce, CRM solutions, automation, and integrations.',
+            title: 'Adi Olszanski | Information Systems, Automation & Integrations',
+            description: 'Professional portfolio of Adi Olszanski: Information Systems, automation, and integrations, ' +
+                'specializing in Salesforce and CRM solutions.',
 
             submit: 'Send message',
             nameMissing: 'Please enter your full name.',
@@ -184,14 +190,19 @@
         root.setAttribute('dir', currentLang === 'en' ? 'ltr' : 'rtl');
     }
 
+    // <title> is parsed before this script, so the tab title can be set right away.
+    function applyTitle() {
+        document.title = t('title');
+    }
+
     applyDirection();
+    applyTitle();
     if (currentLang === 'en') {
         // Hide content until the English text is in place (removed in initLanguage).
         root.classList.add('i18n-pending');
     }
 
     var originalHebrew = [];   // [{ el, html }] captured from the page on load
-    var hebrewTitle = '';
 
     function applyLanguage() {
         applyDirection();
@@ -202,7 +213,7 @@
             item.el.innerHTML = currentLang === 'en' && english !== undefined ? english : item.html;
         });
 
-        document.title = currentLang === 'en' ? UI_TEXT.en.title : hebrewTitle;
+        applyTitle();
         var description = document.querySelector('meta[name="description"]');
         if (description) {
             description.setAttribute('content', t('description'));
@@ -214,7 +225,6 @@
     }
 
     function initLanguage() {
-        hebrewTitle = document.title;
         var elements = document.querySelectorAll('[data-i18n]');
         for (var i = 0; i < elements.length; i++) {
             originalHebrew.push({ el: elements[i], html: elements[i].innerHTML });
